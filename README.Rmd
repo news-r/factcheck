@@ -1,0 +1,59 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/news-r/factcheck.svg?branch=master)](https://travis-ci.org/news-r/factcheck)
+<!-- badges: end -->
+
+# factcheck
+
+Fact Check, Create Claims and More
+
+## Installation
+
+``` r
+# install.packages("remotes")
+remotes::install_github("news-r/factcheck")
+```
+
+## Setup
+
+Get a free key from the [Google Cloud Platform](https://console.cloud.google.com) (formerly Google Console).
+
+```r
+factcheck_key("xxXXxxXx")
+```
+
+Note that you can specify the `FACTCHECK_API_KEY` key as an environment variable in your `.Renviron` for convenience.
+
+## ROADMAP
+
+- [x] Fact Check
+- [ ] Create claims
+- [ ] Get created claims
+- [ ] Delete created claims
+- [ ] Edit claims
+
+## Example
+
+```{r example}
+library(factcheck)
+
+# Claims on Trump in English that are maximum 10 days old
+fact_check("Trump", lang = "en-US", days_old = 10)
+
+# Claims made on the New York Times
+fact_check(publisher = "nytimes.com")
+```

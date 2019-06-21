@@ -1,5 +1,5 @@
 Package: factcheck
-Title: Fact Check with the 'Google' 'FactCheck' 'API' 
+Title: Fact Check, Create Claims and More
 Version: 0.0.1
 Authors@R: 
     c(person(given = "John",
@@ -8,7 +8,7 @@ Authors@R:
            email = "jcoenep@gmail.com",
            comment = c(ORCID = "0000-0002-6637-4107")),
     person(family = "news-r", role = "cph"))
-Description: Fact check things.
+Description: Fact check queries or publishers.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
