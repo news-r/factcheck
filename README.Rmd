@@ -41,6 +41,7 @@ Note that you can specify the `FACTCHECK_API_KEY` key as an environment variable
 ## ROADMAP
 
 - [x] Fact Check
+- [x] Authentication
 - [ ] Create claims
 - [ ] Get created claims
 - [ ] Delete created claims

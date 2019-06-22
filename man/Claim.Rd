@@ -9,6 +9,6 @@
 Claim
 }
 \description{
-Create a claim
+Create a claim.
 }
 \keyword{datasets}

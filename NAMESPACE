@@ -2,6 +2,7 @@
 
 export(Claim)
 export(fact_check)
+export(fact_token)
 export(factcheck_key)
 import(assertthat)
 import(httr)

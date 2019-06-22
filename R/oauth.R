@@ -2,8 +2,8 @@
 #' 
 #' Create an OAuth token.
 #' 
-#' @param key,secret Your key and secret from a Google Console app: \url{https://console.cloud.google.com}.
-#' @param app_name 
+#' @param cache Whether to cache the token.
+#' @param use_oob Whether to use out-of-band authentication.
 #' 
 #' @export
 fact_token <- function(cache = gargle::gargle_oauth_cache(), 
