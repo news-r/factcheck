@@ -16,5 +16,6 @@ Imports:
     httr,
     purrr,
     tibble,
+    gargle,
     assertthat
 RoxygenNote: 6.1.1

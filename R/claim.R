@@ -35,7 +35,7 @@ Claim <- R6::R6Class("Claim",
 
       url <- .build_url(endpoint = "pages")
 
-      response <- POST(url, body = body)
+      response <- POST(url, body = body, config(token = getOption("FACTCHECK_TOKEN")))
       stop_for_status(response)
       content(response)
     }
