@@ -28,7 +28,7 @@ fact_check <- function(q = NULL, lang = NULL, publisher = NULL, days_old = NULL,
     reviewPublisherSiteFilter = publisher, 
     maxAgeDays = days_old,
     pages = pages,
-    pageSize = 20,
+    pageSize = 50,
     endpoint = "claims:search"
   )
 

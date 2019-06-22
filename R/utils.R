@@ -20,6 +20,7 @@ BASE_PATH <- "v1alpha1"
   # init
   p <- 0
   claims <- list()
+  token <- "init"
 
   while(p < pages && !is.null(token)){
     if(p == 0) token <- NULL # init token
