@@ -8,7 +8,7 @@
 
 # factcheck
 
-Fact Check, Create Claims and More
+Fact check publishers or queries, create claims and more.
 
 ## Installation
 
