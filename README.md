@@ -27,7 +27,7 @@ factcheck_key("xxXXxxXx")
 
 Note that you can specify the `FACTCHECK_API_KEY` key as an environment variable in your `.Renviron` for convenience.
 
-## ROADMAP
+## Roadmap
 
 - [x] Fact Check
 - [x] Authentication
