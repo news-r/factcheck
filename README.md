@@ -8,7 +8,7 @@
 
 # factcheck
 
-Fact check publishers or queries, create claims and more.
+Fact check publishers or queries, create claims and more with the [Google FactCheck Toolbox](https://toolbox.google.com/factcheck).
 
 ## Installation
 
