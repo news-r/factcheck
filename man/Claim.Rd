@@ -11,4 +11,10 @@ Claim
 \description{
 Create a claim.
 }
+\examples{
+\dontrun{
+claim <- Claim$new() 
+}
+
+}
 \keyword{datasets}

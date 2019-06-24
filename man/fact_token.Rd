@@ -4,15 +4,12 @@
 \alias{fact_token}
 \title{OAuth}
 \usage{
-fact_token(token = NULL, cache = gargle::gargle_oauth_cache(),
-  use_oob = gargle::gargle_oob_default())
+fact_token(token = NULL, id, secret)
 }
 \arguments{
 \item{token}{A previously generated token.}
 
-\item{cache}{Whether to cache the token.}
-
-\item{use_oob}{Whether to use out-of-band authentication.}
+\item{id, secret}{Your credentials.}
 }
 \value{
 Invisibly returns an object of class \code{Token2.0}.
@@ -22,7 +19,7 @@ Create an OAuth token.
 }
 \examples{
 \dontrun{
-token <- fact_token()
+token <- fact_token(id = "XxxXXXxxxX", secret = "XXxxXxX")
 
 # In future sessions pass Token  object
 fact_token(token)
