@@ -1,5 +1,7 @@
 ---
-output: github_document
+output:
+  github_document:
+    html_preview: false
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -30,13 +32,15 @@ remotes::install_github("news-r/factcheck")
 
 ## Setup
 
-Get a free key from the [Google Cloud Platform](https://console.cloud.google.com) (formerly Google Console).
+Get a free key from the [Google Console](https://console.cloud.google.com).
 
 ```r
 factcheck_key("xxXXxxXx")
 ```
 
 Note that you can specify the `FACTCHECK_API_KEY` key as an environment variable in your `.Renviron` for convenience.
+
+The above key will work for the `fact_check` function, other function to create, update, or delete your claims will require OAuth 2.0 authentication using `fact_token`.
 
 ## ROADMAP
 

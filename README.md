@@ -1,14 +1,16 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-
-
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/news-r/factcheck.svg?branch=master)](https://travis-ci.org/news-r/factcheck)
+
+[![Travis build
+status](https://travis-ci.org/news-r/factcheck.svg?branch=master)](https://travis-ci.org/news-r/factcheck)
 <!-- badges: end -->
 
 # factcheck
 
-Fact check publishers or queries, create claims and more with the [Google FactCheck Toolbox](https://toolbox.google.com/factcheck).
+Fact check publishers or queries, create claims and more with the
+[Google FactCheck Toolbox](https://toolbox.google.com/factcheck).
 
 ## Installation
 
@@ -19,45 +21,50 @@ remotes::install_github("news-r/factcheck")
 
 ## Setup
 
-Get a free key from the [Google Cloud Platform](https://console.cloud.google.com) (formerly Google Console).
+Get a free key from the [Google
+Console](https://console.cloud.google.com).
 
-```r
+``` r
 factcheck_key("xxXXxxXx")
 ```
 
-Note that you can specify the `FACTCHECK_API_KEY` key as an environment variable in your `.Renviron` for convenience.
+Note that you can specify the `FACTCHECK_API_KEY` key as an environment
+variable in your `.Renviron` for convenience.
 
-## Roadmap
+The above key will work for the `fact_check` function, other function to
+create, update, or delete your claims will require OAuth 2.0
+authentication using `fact_token`.
 
-- [x] Fact Check
-- [x] Authentication
-- [ ] Create claims
-- [ ] Get created claims
-- [ ] Delete created claims
-- [ ] Edit claims
+## ROADMAP
+
+  - \[x\] Fact Check
+  - \[x\] Authentication
+  - \[ \] Create claims
+  - \[ \] Get created claims
+  - \[ \] Delete created claims
+  - \[ \] Edit claims
 
 ## Example
 
-
-```r
+``` r
 library(factcheck)
 
 # Claims on Trump in English that are maximum 10 days old
 fact_check("Trump", lang = "en-US", days_old = 10)
-#> # A tibble: 32 x 4
+#> # A tibble: 24 x 4
 #>    text                              claimant   claimDate     claimReview  
 #>    <chr>                             <chr>      <chr>         <list>       
 #>  1 "\"Many, many [auto] plants are … Donald Tr… 2019-06-18T0… <named list …
 #>  2 "Quotes Gene Hackman as saying t… Facebook … 2019-06-20T0… <named list …
 #>  3 "\"When I became president, Pres… Donald Tr… 2019-06-20T0… <named list …
 #>  4 "A meme claims that a photo of a… Viral ima… 2019-06-17T0… <named list …
-#>  5 "“We are, by the way, the number… Donald Tr… 2019-06-18T0… <named list …
+#>  5 "Claims that Sarah Huckabee Sand… Viral Ima… 2019-06-17T0… <named list …
 #>  6 "“We are, by the way, the number… Donald Tr… 2019-06-18T0… <named list …
-#>  7 "\"Well, I got 52% (of women vot… Donald Tr… 2019-06-16T0… <named list …
-#>  8 Allegedly shows a rally held by … Viral Ima… 2019-05-27T0… <named list …
-#>  9 "Quotes Queen Elizabeth II as sa… Facebook … 2019-06-07T0… <named list …
-#> 10 Nobody’s been tougher on Russia … Donald Tr… 2019-06-18T0… <named list …
-#> # … with 22 more rows
+#>  7 "“We are, by the way, the number… Donald Tr… 2019-06-18T0… <named list …
+#>  8 "\"Well, I got 52% (of women vot… Donald Tr… 2019-06-16T0… <named list …
+#>  9 Allegedly shows a rally held by … Viral Ima… 2019-05-27T0… <named list …
+#> 10 "Quotes Queen Elizabeth II as sa… Facebook … 2019-06-07T0… <named list …
+#> # … with 14 more rows
 
 # Claims made on the New York Times
 fact_check(publisher = "nytimes.com")
