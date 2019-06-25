@@ -13,7 +13,7 @@ Create a claim.
 }
 \examples{
 \dontrun{
-claim <- Claim$new() 
+claim <- Claim$new(url = "https://some-domain.com/Y/m/d/article-slug") 
 }
 
 }

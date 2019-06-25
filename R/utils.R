@@ -1,10 +1,15 @@
 BASE_URL <- "https://factchecktools.googleapis.com"
 BASE_PATH <- "v1alpha1"
 
-.build_url <- function(..., endpoint) {
+.build_url <- function(..., endpoint, with_key = TRUE) {
   url <- parse_url(BASE_URL)
   url$path <- c(BASE_PATH, endpoint)
-  url$query <- list(..., key = .get_key())
+
+  # opts
+  opts <- list(...)
+  if(with_key) opts$key = .get_key()
+
+  url$query <- opts
   url$scheme <- "https"
   build_url(url)
 }

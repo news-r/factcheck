@@ -4,10 +4,10 @@
 \alias{fact_token}
 \title{OAuth}
 \usage{
-fact_token(token = NULL, id, secret)
+fact_token(token = Sys.getenv("FACTCHECK_TOKEN"), id, secret)
 }
 \arguments{
-\item{token}{A previously generated token.}
+\item{token}{A previously generated token or the path to the saved \code{RDS} file.}
 
 \item{id, secret}{Your credentials.}
 }

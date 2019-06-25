@@ -4,7 +4,7 @@
 #' 
 #' @examples
 #' \dontrun{
-#' claim <- Claim$new() 
+#' claim <- Claim$new(url = "https://some-domain.com/Y/m/d/article-slug") 
 #' }
 #' 
 #' @export
@@ -18,6 +18,7 @@ Claim <- R6::R6Class("Claim",
       private$.claimLocation <- location
       private$.claimFirstAppearance <- first_appearance
       private$.claimAppearances <- appearances
+      invisible(self)
     },
     review_author = function(name = Sys.getenv("FACTCHECK_NAME"), image = NULL){
       assert_that(!nchar(name) > 0, msg = "Missing `name`")
@@ -53,7 +54,7 @@ Claim <- R6::R6Class("Claim",
         claimReviewMarkups = list(
           url = private$.url,
           claimReviewed = private$.claimReviewed,
-          claimDate = as.character(private$.claimDate),
+          claimDate = private$.claimDate,
           claimLocation = private$.claimLocation,
           claimFirstAppearance = private$.claimFirstAppearance,
           claimAppearances = private$.claimAppearances,
@@ -62,13 +63,13 @@ Claim <- R6::R6Class("Claim",
         )
       )
 
-      url <- .build_url(endpoint = "pages")
+      url <- .build_url(endpoint = "pages", with_key = FALSE)
 
       # ge token if missing
       TK <- getOption("FACTCHECK_TOKEN")
-      if(is.null(TK)) TK <- fact_token()
+      assert_that(!is.null(TK), msg = "No token, see `fact_token`")
 
-      response <- POST(url, body = body, config(token = TK), encode = "json", accept_json(), content_type("json"))
+      response <- POST(url, body = body, config(token = TK, verbose = FALSE), encode = "json", accept_json(), content_type("application/json"))
       stop_for_status(response, content(response)$error$message)
       content(response)
     }
